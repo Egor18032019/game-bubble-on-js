@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Игра в "лопни-шарики" на JS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+  <header>
+    <div class="phase">
+      <span class="timer">00:00</span>
+    </div>
+
+    <div>
+      <span class="playerboard" id="playerboard" data-points="0">сбитых ариков</span>
+    </div>
+    <div>
+      Лучший результат: <span class="playerboard" id="topScoreBoard" data-points="0">сбитых шариков</span>
+    </div>
+
+  </header>
+
+  <main class="gamefield">
+
+    <button class="startButton">Начать!</button>
+
+    <div class="hole">
+      <div class="bubble"></div>
+    </div>
+    <div class="hole">
+      <div class="bubble"></div>
+    </div>
+    <div class="hole">
+      <div class="bubble"></div>
+    </div>
+    <div class="hole">
+      <div class="bubble"></div>
+    </div>
+    <div class="hole">
+      <div class="bubble"></div>
+    </div>
+  </main>
+  <footer>Сбей столько шариков сколько сможешь за 60 секунд!</footer>
+  <script src="game.js"></script>
+</body>

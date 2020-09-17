@@ -1,0 +1,32 @@
+{
+  "name": "bubble-on-js",
+  "version": "1",
+  "private": true,
+  "description": "тестовое ради интереса",
+  "main": "index.html",
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*.html' '**/*.css' '**/*.js' '**/*.png' '**/*.jpeg' '**/*.jpg'",
+    "test": "eslint js/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Egor18032019/game-bubble-on-js.git"
+  },
+  "keywords": [
+    "game",
+    "javascript",
+    "vanilla javascript",
+    "html5",
+    "bubble"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Egor18032019/game-bubble-on-js.git"
+  },
+  "homepage": "git@github.com:Egor18032019",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "eslint": "6.3.0",
+    "eslint-config-htmlacademy": "0.5.2"
+  }
+}
