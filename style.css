@@ -27,7 +27,7 @@ body {
   font-size: 0;
 }
 
-.hole {
+.field {
   display: inline-block;
   text-align: center;
   width: 20%;
@@ -40,26 +40,60 @@ body {
   height: 50px;
   background: url(img/balloon.png) no-repeat center center;
   background-size: 100% auto;
-  transition: top 0.45s;
+/* плавный подьем в верх */
+  transition: all 0.4s ;
   display: inline-block;
   position: relative;
   top: 100%;
 }
-
+/* если .bubble внутри .up */
 .up > .bubble {
   top: 20px;
 }
 
-.boom > .bubble {
+.drake {
+  width: 40px;
+  height: 40px;
+  background: url(img/dragon02.gif) no-repeat center center;
+  background-size: 100% auto;
+/* плавный подьем в верх */
+  transition: all 1s ;
+  display: inline-block;
+  position: relative;
+  top: -20%;
+}
+
+.airplane {
+  width: 40px;
+  height: 60px;
+  background: url(img/animal01.gif) no-repeat center center;
+  background-size: 100% auto;
+/* плавный подьем в верх */
+  transition: all 4s;
+  display: inline-block;
+  position: relative;
+  top: -40%;
+  left:-40%
+}
+
+.down > .drake {
+  top: 20px;
+}
+
+.skew > .airplane {
+  top: 99%;
+  left:20%;
+  /* transform: rotate(180deg); */
+  /* rotate: 180deg; */
+}
+
+.boom > .bubble,
+.boom > .airplane,
+.boom > .drake {
   background-image: url(img/boom.png);
 }
 
-.captured > .bubble {
-  margin-left: 30px;
-  width: 40px;
-  height: 40px;
-}
-
+ 
 
 header {
   margin: 0;
