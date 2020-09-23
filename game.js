@@ -30,13 +30,13 @@ const getRandomInRange = (from, to) => {
  * возвращает случайный элемент из массива
  * @param {*} list массив 
  */
-const randomItem = function (list) {
+const getRandomItemForArray = function (list) {
   const next = list[getRandomInRange(0, list.length - 1)];
   // следующая проверка проверяет что предыдущий элемент не равен новому. Что бы шарики не подряд шли 
-  if (randomItem.prev && randomItem.prev === next) {
-    return randomItem(list);
+  if (getRandomItemForArray.prev && getRandomItemForArray.prev === next) {
+    return getRandomItemForArray(list);
   }
-  randomItem.prev = next;
+  getRandomItemForArray.prev = next;
   return next;
 }
 
@@ -46,9 +46,8 @@ const randomItem = function (list) {
  */
 function show(field) {
   field.classList.remove('boom');
-
-  let classNameArray = [`up`, `down`,`skew`] // по очереди вставляет то дракона то шарик
-  let classForBubble = randomItem(classNameArray)
+  let classNameArray = [`up`, `down`,`skew`] // по очереди вставляет вызов дракона*шарика и т.п.
+  let classForBubble = getRandomItemForArray(classNameArray)
   field.classList.add(classForBubble);
 }
 /**
@@ -119,20 +118,16 @@ function handleClick() {
       hide(field);
       points = points + 1;
       updateScoreboard(points);
-    }, 500); // задержка выполнения нужна чтобы при взрыве шарик в верху завис и была анимация взрыва
+    }, 600); // задержка выполнения нужна чтобы при взрыве шарик в верху завис и была анимация взрыва
 
 }
 // генерация следующего шарика
 function next() {
-  let foo = document.createElement("div");
-  foo.className="test";
-  let mov = document.querySelector(`.field`);
-  mov.appendChild(foo);
-  const field = randomItem(fields);
+  const field = getRandomItemForArray(fields);
   show(field);
   field.timeout = setTimeout(i => {
     hide(field);
-  }, getRandomInRange(1200, 3000));
+  }, getRandomInRange(1000, 3000));
 }
 /**
  * Фунция которая будет через рандомный промежуток времени проверять идет игра и если идет то вызывает функицю которая 
@@ -199,6 +194,9 @@ const airplanes = document.getElementsByClassName('airplane');
 const scoreboard = document.getElementById('currentScorePlayer');
 const bestScore = document.getElementById('topScoreBoard');
 const startButton = document.querySelector('.startButton');
+const footer = document.querySelector('footer');
+footer.innerText = `Сбей столько шариков сколько сможешь за `+ GAME_TIMEOUT/1000 + ` секунд!`
+
 /**
  * html элемент куда записываем время
  */

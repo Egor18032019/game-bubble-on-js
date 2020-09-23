@@ -41,7 +41,7 @@ body {
   background: url(img/balloon.png) no-repeat center center;
   background-size: 100% auto;
 /* плавный подьем в верх */
-  transition: all 0.4s ;
+  transition: all 1s ;
   display: inline-block;
   position: relative;
   top: 100%;
